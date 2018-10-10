@@ -39,3 +39,7 @@ Thumbs.db
 # UEStudio related #
 ####################
 *.pui
+
+# folder #
+##########
+_site/**
