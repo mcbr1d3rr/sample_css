@@ -1,7 +1,5 @@
 ---
 layout: default
-title: Dangerous Blog
-description: A dangerous site deserves a dangerous blog.
 ---
 
 <div class="home">
@@ -63,24 +61,10 @@ description: A dangerous site deserves a dangerous blog.
 
   <div class="home-section">
     <h4>Most recent post</h4>
-    <div class="blog-posts">
-      <header class="post-header">
-        <h2>
-          <a href="{{ site.posts.first.url }}">
-          {{ site.posts.first.title }}</a>
-        </h2>
-        <div class="post-byline">
-          <img src="{{ site.posts.first.gravatar }}">
-          <a href="{{ site.posts.first.authorTwitter }}"
-          class="social-link">Tw</a>
-          by: {{ site.posts.first.author }}
-          <span> - {{ site.posts.first.date | date: '%B %d, %Y' }}</span>
-        </div>
-      </header>
-      <div class="posts-image"
-      style="background-image:url({{ site.posts.first.postHero }})"></div>
-      {{ site.posts.first.excerpt }}
-    </div>
+    {% for post in site.posts limit:1 %}
+      {% include post-excerpt.html %}
+    {% endfor %}
+
   </div>
 
   <div class="home-section">
@@ -96,7 +80,9 @@ description: A dangerous site deserves a dangerous blog.
       <div class="bio-box">
         <img src="https://placekitten.com/g/400/400" alt="">
         <h3>Michael Hartl</h3>
-        <a href="https://twitter.com/mhartl" class="social-link">Tw</a>
+        <a href="https://twitter.com/mhartl" class="social-link">
+          <i class="fa fa-twitter"></i>
+        </a>
         <div class="bio-copy">
           <p>
             Known for his dazzling charm, rapier wit, and unrivaled humility,
@@ -104,10 +90,8 @@ description: A dangerous site deserves a dangerous blog.
             <a href="https://railstutorial.org/">Ruby on Rails
             Tutorial</a> and principal author of the
             <a href="https://learnenough.com/">
-            Learn Enough to Be Dangerous</a> introductory sequence.
-          </p>
-          <p>
-            Michael is also notorious as the founder of
+            Learn Enough to Be Dangerous</a> introductory sequence. Michael
+            is also notorious as the founder of
             <a href="https://tauday.com/">Tau Day</a> and author of
             <a href="https://tauday.com/tau-manifesto"><em>The Tau
             Manifesto</em></a>, but rumors that he's secretly a supervillain
@@ -118,26 +102,30 @@ description: A dangerous site deserves a dangerous blog.
       <div class="bio-box">
         <img src="https://placekitten.com/g/400/400" alt="">
         <h3>Lee Donahoe</h3>
-        <a href="https://twitter.com/leedonahoe" class="social-link">Tw</a>
+        <a href="https://twitter.com/leedonahoe" class="social-link">
+          <i class="fa fa-twitter"></i>
+        </a>
         <div class="bio-copy">
           <p>
-            When he's not literally swimming with sharks or hunting powder
-            stashes on his snowboard, you can find Lee in front of his computer
-            designing interfaces, doing front-end development, or writing some of
-            the interface-related Learn Enough tutorials.
+            When he's not literally swimming with sharks or hunting powder stashes on
+            his snowboard, you can find Lee in front of his computer designing
+            interfaces, doing front-end development, or writing some of the
+            interface-related Learn Enough tutorials.
           </p>
         </div>
       </div>
       <div class="bio-box">
         <img src="https://placekitten.com/g/400/400" alt="">
         <h3>Nick Merwin</h3>
-        <a href="https://twitter.com/nickmerwin" class="social-link">Tw</a>
+        <a href="https://twitter.com/nickmerwin" class="social-link">
+          <i class="fa fa-twitter"></i>
+        </a>
         <div class="bio-copy">
           <p>
-            You may have seen him shredding guitar live with Capital Cities on
-            Jimmy Kimmel, Conan, or The Ellen Show, but rest assured Nick is a
-            true nerd at heart. He's just as happy shredding well-spec'd lines
-            of code from a tour bus as he is from his kitchen table.
+            You may have seen him shredding guitar live with Capital Cities on Jimmy
+            Kimmel, Conan, or The Ellen Show, but rest assured Nick is a true nerd at
+            heart. He's just as happy shredding well-spec'd lines of code from a tour
+            bus as he is from his kitchen table.
           </p>
         </div>
       </div>

@@ -1,8 +1,7 @@
 <li><a href="/">Home</a></li>
 <li><a href="/gallery">Gallery</a></li>
 <li class="dropdown">
-    <a class="drop-trigger" href="/blog">Blog</a>
-  <!--<span class="drop-trigger" href="/blog">Blog</span>--><!-- non-clickable link-->
+  <a class="drop-trigger" href="/blog">Blog</a>
   <ul class="drop-menu">
     <li>Recent Posts</li>
     {% for post in site.posts limit:5 %}
